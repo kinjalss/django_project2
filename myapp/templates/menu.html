@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 style="color: #495E57; text-align: center;">Our Menu</h1>
+    <p style="text-align: center;">Choose from our delicious menu items:</p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        {% for item in menu_items %}
+            <div style="width: 200px; text-align: center; padding: 15px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                <img src="{% static 'img/' %}{{ item.name|slugify }}.jpg" alt="{{ item.name }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
+                <h3>{{ item.name }}</h3>
+                <a href="{% url 'menu_item_detail' pk=item.id %}" style="color: #495E57; font-weight: bold;">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

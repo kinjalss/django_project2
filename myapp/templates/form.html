@@ -1,0 +1,7 @@
+<form action="{% url 'getform' %}" method="POST">
+    <!--Submit button click kelyavar hya url var ja-->
+    {% csrf_token %} <!-- Security tokens to prevent attacks -->
+    <p>Name: <input type="text" name="name"></p>
+    <p>UserId: <input type="text" name="id"></p>
+    <input type="submit">
+</form>

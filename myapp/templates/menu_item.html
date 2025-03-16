@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section style="text-align: center; padding: 20px;">
+    <article style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+        <h1>{{ menu_item.name }}</h1>
+        <span>
+            <a href="{% url 'home' %}">Home</a> /
+            <a href="{% url 'menu' %}">Menu</a> /
+            <strong>{{ menu_item.name }}</strong>
+        </span>
+        
+        <img src="{% static 'img/' %}{{ menu_item.name|slugify }}.jpg" alt="{{ menu_item.name }}" style="width: 300px; height: 300px; object-fit: cover; border-radius: 10px; margin-top: 10px;">
+
+        <h2>{{ menu_item.name }}</h2>
+        <p>{{ menu_item.description }}</p>
+        <p style="font-weight: bold;">Price: ${{ menu_item.price }}.00</p>
+    </article>
+</section>
+{% endblock %}

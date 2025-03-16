@@ -1,0 +1,56 @@
+{% load static %}
+<header style="text-align: center; padding: 20px;">
+  <img src="{% static 'img/logo.png' %}" width="400px" />
+</header>
+
+<style>
+    /* Navigation Styling */
+    nav {
+        background-color: #EE9972;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 20px;
+    }
+
+    nav ul li a {
+        font-size: 24px;  /* Make text bigger */
+        font-weight: bold;
+        text-decoration: none;
+        color: white; /* Change color to white */
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        background-color: #D97B56; /* Darker color on hover */
+    }
+
+    /* Footer Styling */
+    footer {
+        background-color: #EE9972;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
+<nav>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'menu' %}">Menu</a></li>
+    <li><a href="{% url 'book' %}">Book</a></li> 
+  </ul>
+</nav>
+
+<footer></footer>
